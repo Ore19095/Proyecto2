@@ -1,4 +1,14 @@
+// Laboritorio 8 Ejercicio 01
+module Contador12b(input wire  load,enable,clk,reset, input wire [11:0]valueLoad, output reg [11:0] out );
 
+    always @ ( posedge clk, posedge reset, posedge load) begin
+        if (load) out = valueLoad; //si load esta encendido deja pasar a la salida valueLoad
+        else begin // en caso contrario, si reset esta en 1, en 0 se coloca la salida, en caso contrario
+            if (reset) out = 0; // si enable es 1 el contador incrementa en 1 cada flanco
+            else  if(enable == 1 ) out = out + 1;
+        end 
+    end
+endmodule
 //Laboratorio 8 Ejercicio 02 
 module Memory(input wire [11:0] address, output wire [7:0] data );
 
@@ -174,6 +184,6 @@ module uP(input wire [3:0] pushbuttons, input reset, clock,
     FlipFlopD2b banderas({c,z},controlSignals[9],reset, clock, {c_flag,z_flag});
     //---------------------------- PUERTOS DE SALIDA -------------------------------------------
     FlipFlopD4b salida(data_bus, controlSignals[0],reset,clock, FF_out);
-    Triestate in(pushbuttons, controlSignals[2],data_bus);
+    Triestate in(pushbutton, controlSignals[2],data_bus);
 
 endmodule
