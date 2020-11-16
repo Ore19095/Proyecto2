@@ -1,0 +1,1502 @@
+$date
+	Mon Nov 16 16:50:18 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 4 ! data_bus [3:0] $end
+$var wire 1 " z_flag $end
+$var wire 8 # program_byte [7:0] $end
+$var wire 1 $ phase $end
+$var wire 4 % oprnd [3:0] $end
+$var wire 4 & instr [3:0] $end
+$var wire 1 ' c_flag $end
+$var wire 12 ( address_RAM [11:0] $end
+$var wire 4 ) accu [3:0] $end
+$var wire 12 * PC [11:0] $end
+$var wire 4 + FF_out [3:0] $end
+$var reg 1 , clock $end
+$var reg 4 - pushbuttons [3:0] $end
+$var reg 1 . reset $end
+$var integer 32 / nota [31:0] $end
+$scope module uPmodule $end
+$var wire 1 , clock $end
+$var wire 4 0 data_bus [3:0] $end
+$var wire 4 1 pushbuttons [3:0] $end
+$var wire 1 . reset $end
+$var wire 1 " z_flag $end
+$var wire 1 2 z $end
+$var wire 8 3 program_byte [7:0] $end
+$var wire 1 $ phase $end
+$var wire 4 4 oprnd [3:0] $end
+$var wire 4 5 instr [3:0] $end
+$var wire 7 6 inDecode [6:0] $end
+$var wire 13 7 controlSignals [12:0] $end
+$var wire 1 ' c_flag $end
+$var wire 1 8 c $end
+$var wire 4 9 aluOut [3:0] $end
+$var wire 12 : address_RAM [11:0] $end
+$var wire 4 ; accu [3:0] $end
+$var wire 12 < PC [11:0] $end
+$var wire 4 = FF_out [3:0] $end
+$scope module FetchInstr $end
+$var wire 4 > D [3:0] $end
+$var wire 1 , clk $end
+$var wire 1 ? load $end
+$var wire 1 . reset $end
+$var reg 4 @ Q [3:0] $end
+$upscope $end
+$scope module FetchOperand $end
+$var wire 4 A D [3:0] $end
+$var wire 1 , clk $end
+$var wire 1 B load $end
+$var wire 1 . reset $end
+$var reg 4 C Q [3:0] $end
+$upscope $end
+$scope module Phase $end
+$var wire 1 , clk $end
+$var wire 1 D enable $end
+$var wire 1 . reset $end
+$var wire 1 $ q $end
+$scope module FF $end
+$var wire 1 , clk $end
+$var wire 1 E d $end
+$var wire 1 D enable $end
+$var wire 1 . reset $end
+$var reg 1 $ q $end
+$upscope $end
+$upscope $end
+$scope module ROM $end
+$var wire 8 F data [7:0] $end
+$var wire 12 G address [11:0] $end
+$upscope $end
+$scope module acumulador $end
+$var wire 1 , clk $end
+$var wire 1 H load $end
+$var wire 1 . reset $end
+$var wire 4 I D [3:0] $end
+$var reg 4 J Q [3:0] $end
+$upscope $end
+$scope module aluOuput $end
+$var wire 1 K enable $end
+$var wire 4 L y [3:0] $end
+$var wire 4 M in [3:0] $end
+$upscope $end
+$scope module banderas $end
+$var wire 2 N D [1:0] $end
+$var wire 1 , clk $end
+$var wire 1 O load $end
+$var wire 1 . reset $end
+$var reg 2 P Q [1:0] $end
+$upscope $end
+$scope module busDriverOprnad $end
+$var wire 1 Q enable $end
+$var wire 4 R in [3:0] $end
+$var wire 4 S y [3:0] $end
+$upscope $end
+$scope module decode $end
+$var wire 7 T address [6:0] $end
+$var reg 13 U value [12:0] $end
+$upscope $end
+$scope module in $end
+$var wire 1 V enable $end
+$var wire 4 W in [3:0] $end
+$var wire 4 X y [3:0] $end
+$upscope $end
+$scope module programCounter $end
+$var wire 1 , clk $end
+$var wire 1 Y enable $end
+$var wire 1 Z load $end
+$var wire 1 . reset $end
+$var wire 12 [ valueLoad [11:0] $end
+$var reg 12 \ out [11:0] $end
+$upscope $end
+$scope module ram $end
+$var wire 12 ] address [11:0] $end
+$var wire 1 ^ csRAM $end
+$var wire 4 _ data [3:0] $end
+$var wire 1 ` weRAM $end
+$var reg 4 a dataOut [3:0] $end
+$upscope $end
+$scope module salida $end
+$var wire 4 b D [3:0] $end
+$var wire 1 , clk $end
+$var wire 1 c load $end
+$var wire 1 . reset $end
+$var reg 4 d Q [3:0] $end
+$upscope $end
+$scope module unidadAritmetica $end
+$var wire 4 e A [3:0] $end
+$var wire 4 f B [3:0] $end
+$var wire 1 2 Z $end
+$var wire 3 g control [2:0] $end
+$var wire 4 h out [3:0] $end
+$var wire 1 8 C $end
+$var reg 5 i resultado [4:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx i
+bx h
+bx g
+bx f
+bx e
+bx d
+xc
+bx b
+bx a
+x`
+bx _
+x^
+bx ]
+bx \
+bx [
+xZ
+xY
+bx X
+b110 W
+xV
+bx U
+bx T
+bx S
+bx R
+xQ
+bx P
+xO
+bx N
+bx M
+bx L
+xK
+bx J
+bx I
+xH
+bx G
+bx F
+xE
+1D
+bx C
+xB
+bx A
+bx @
+x?
+bx >
+bx =
+bx <
+bx ;
+bx :
+bx 9
+x8
+bx 7
+bx 6
+bx 5
+bx 4
+bx 3
+x2
+b110 1
+bx 0
+b0 /
+0.
+b110 -
+0,
+bx +
+bx *
+bx )
+bx (
+x'
+bx &
+bx %
+x$
+bx #
+x"
+bx !
+$end
+#2
+12
+b0 !
+b0 0
+b0 L
+b0 S
+b0 X
+b0 _
+b0 b
+b0 f
+0V
+0c
+0O
+1K
+b0 g
+0H
+0^
+0`
+0Q
+1Y
+0Z
+b0 9
+b0 I
+b0 M
+b0 h
+b1 N
+08
+b100 >
+b1111 A
+b1000000001000 7
+b1000000001000 U
+b0 i
+b1001111 #
+b1001111 3
+b1001111 F
+b0 *
+b0 <
+b0 G
+b0 \
+1E
+1?
+1B
+0"
+0'
+b1001111 (
+b1001111 :
+b1001111 [
+b1001111 ]
+b0 %
+b0 4
+b0 C
+b0 R
+b0 &
+b0 5
+b0 @
+b0 6
+b0 T
+0$
+b0 )
+b0 ;
+b0 J
+b0 e
+b0 P
+b0 +
+b0 =
+b0 d
+1.
+#3
+0.
+#5
+b0 N
+02
+b1111 9
+b1111 I
+b1111 M
+b1111 h
+b1111 i
+b1111 !
+b1111 0
+b1111 L
+b1111 S
+b1111 X
+b1111 _
+b1111 b
+b1111 f
+1O
+0K
+b10 g
+1H
+1Q
+0Y
+b11010000010 7
+b11010000010 U
+b11 A
+b100 &
+b100 5
+b100 @
+b1111 %
+b1111 4
+b1111 C
+b1111 R
+b111101000011 (
+b111101000011 :
+b111101000011 [
+b111101000011 ]
+b1000011 #
+b1000011 3
+b1000011 F
+b1 *
+b1 <
+b1 G
+b1 \
+0E
+0?
+0B
+b100001 6
+b100001 T
+1$
+1,
+#10
+0,
+#15
+b1111 !
+b1111 0
+b1111 L
+b1111 S
+b1111 X
+b1111 _
+b1111 b
+b1111 f
+0O
+1K
+b0 g
+0H
+0Q
+1Y
+b1000000001000 7
+b1000000001000 U
+b1111 )
+b1111 ;
+b1111 J
+b1111 e
+1E
+1?
+1B
+b100000 6
+b100000 T
+0$
+1,
+#20
+0,
+#25
+b11 9
+b11 I
+b11 M
+b11 h
+b11 i
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1O
+0K
+b10 g
+1H
+1Q
+0Y
+b1100 >
+b10 A
+b11010000010 7
+b11010000010 U
+b11 %
+b11 4
+b11 C
+b11 R
+b1111000010 (
+b1111000010 :
+b1111000010 [
+b1111000010 ]
+b11000010 #
+b11000010 3
+b11000010 F
+b10 *
+b10 <
+b10 G
+b10 \
+0E
+0?
+0B
+b100001 6
+b100001 T
+1$
+1,
+#30
+0,
+#35
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+0O
+1K
+b0 g
+0H
+0Q
+1Y
+b1000000001000 7
+b1000000001000 U
+b11 )
+b11 ;
+b11 J
+b11 e
+1E
+1?
+1B
+b100000 6
+b100000 T
+0$
+1,
+#40
+0,
+#45
+b11 9
+b11 I
+b11 M
+b11 h
+1Z
+b11 i
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+0O
+1K
+b0 g
+0H
+0Q
+0Y
+bx >
+bx A
+b100000001000 7
+b100000001000 U
+b1100 &
+b1100 5
+b1100 @
+b10 %
+b10 4
+b10 C
+b10 R
+b10xxxxxxxx (
+b10xxxxxxxx :
+b10xxxxxxxx [
+b10xxxxxxxx ]
+bx #
+bx 3
+bx F
+b1000100011 *
+b1000100011 <
+b1000100011 G
+b1000100011 \
+0E
+0?
+0B
+b1100001 6
+b1100001 T
+1$
+1,
+#50
+0,
+#55
+1Y
+0Z
+b1000000001000 7
+b1000000001000 U
+b10xxxxxxxx *
+b10xxxxxxxx <
+b10xxxxxxxx G
+b10xxxxxxxx \
+1E
+1?
+1B
+b1100000 6
+b1100000 T
+0$
+1,
+#60
+0,
+#65
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+0Z
+b0 7
+b0 U
+bx &
+bx 5
+bx @
+bx (
+bx :
+bx [
+bx ]
+bx %
+bx 4
+bx C
+bx R
+bx *
+bx <
+bx G
+bx \
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#70
+0,
+#75
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#80
+0,
+#85
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#90
+0,
+#95
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#100
+0,
+#105
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#110
+0,
+#115
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#120
+0,
+#125
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#130
+0,
+#135
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#140
+0,
+#145
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#150
+0,
+#155
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#160
+0,
+#165
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#170
+0,
+#175
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#180
+0,
+#185
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#190
+0,
+#195
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#200
+0,
+#205
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#210
+0,
+#215
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#220
+0,
+#225
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#230
+0,
+#235
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#240
+0,
+#245
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#250
+0,
+#255
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#260
+0,
+#265
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#270
+0,
+#275
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#280
+0,
+#285
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#290
+0,
+#295
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#300
+0,
+#305
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#310
+0,
+#315
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#320
+0,
+#325
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#330
+0,
+#335
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#340
+0,
+#345
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#350
+0,
+#355
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#360
+0,
+#365
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#370
+0,
+#375
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#380
+0,
+#385
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#390
+0,
+#395
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#400
+0,
+#405
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#410
+0,
+#415
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#420
+0,
+#425
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#430
+0,
+#435
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#440
+0,
+#445
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#450
+0,
+#455
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#460
+0,
+#465
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#470
+0,
+#475
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#480
+0,
+#485
+bz !
+bz 0
+bz L
+bz S
+bz X
+bz _
+bz b
+bz f
+0K
+0Y
+b0 7
+b0 U
+0E
+0?
+0B
+bx001 6
+bx001 T
+1$
+1,
+#490
+0,
+#495
+b11 !
+b11 0
+b11 L
+b11 S
+b11 X
+b11 _
+b11 b
+b11 f
+1K
+1Y
+b1000000001000 7
+b1000000001000 U
+1E
+1?
+1B
+bx000 6
+bx000 T
+0$
+1,
+#500
+0,
