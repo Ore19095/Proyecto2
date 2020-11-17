@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+=======
+
+//Laboratorio 8 Ejercicio 02 
+module Memory(input wire [11:0] address, output wire [7:0] data );
+>>>>>>> parent of 524793e... Resolviendo el problema
 
 module FlipFlopD2b(input wire [1:0] D,input wire load, reset, clk, output reg[1:0] Q );
 
@@ -87,6 +93,7 @@ module uP(input wire [3:0] pushbuttons, input reset, clock,
 
     wire [12:0] controlSignals;
     wire [6:0] inDecode;
+<<<<<<< HEAD
 
     assign inDecode = {instr, c_flag, z_flag, phase };
     FlipFlopT fase(1'b1, reset,clock,phase);
@@ -97,5 +104,44 @@ module uP(input wire [3:0] pushbuttons, input reset, clock,
                               instr, opernd, program_byte, PC);
 
     assign address_RAM= {opernd, program_byte};
+=======
+    assign inDecode = {instr,c_flag,z_flag,phase}; //el bus que va de entrada al decode, se concantenan buses mostrados
+    wire [12:0] controlSignals; //bus de señales de ocntrol
+
+
+    //----------------CONTROL DE FLUJO DEL PROGRAMA--------------------------------
+    Decode decode(inDecode, controlSignals); // se conectan los buses necesarios para el modulo de decode
+    //se conecta el bit loadPC con load, incPC con enable, las seniales de reloj y reset, y ademas la direccion de la ram
+    Contador12b programCounter(controlSignals[11], controlSignals[12],clock,reset, address_RAM, PC );
+    //la memoria de programa, se conecta pc a la direccion y program_byte a la salida
+    Memory  ROM(PC, program_byte);
+    //el modulo de fetch, en donde el load es controlado por el complenento del valor de phase.
+
+    //------------------ BUS DE DATOS-----------------------------------------------------------
+    FlipFlopD4b FetchOperand(program_byte[3:0], ~phase, reset, clock, oprnd);
+    FlipFlopD4b FetchInstr(program_byte[7:4], ~phase, reset, clock, instr);
+    //se concantenan oprnd y program_byte para generar el valor de address
+    assign address_RAM = {oprnd,program_byte};
+    //se genera la salida de phase
+    FlipFlopT Phase(1'b1 ,reset, clock,phase);
+    // se onceta oeoperand de controlSignal bus tri estado y la salida se conecta al bus de datos 
+    Triestate   busDriverOprnad(oprnd,controlSignals[1],data_bus);
+    //se conecta la memoria ram al bus de datos y se le conectan las señales de weRAM y csRAM ademas del bus de direcciones
+    RAM ram(address_RAM,controlSignals[4],controlSignals[5],data_bus);
+    //-----------------MODULO DE ALU Y EL ACUMULADOR -------------------------------------------
+    wire [3:0] aluOut; //Salida de la alu
+    wire c,z; //salidas c y z de la alu
+    //se conecta el FF del acumilador a la senial de control respectiva y ademas su salida se conecta a la salida del modulo accu
+    FlipFlopD4b acumulador(aluOut, controlSignals[10],reset, clock, accu);
+
+    ALU unidadAritmetica(accu, data_bus,controlSignals[8:6],aluOut,c,z);
+    // buffer tri estado que conecta la salida de la alu con el bus de datos
+    Triestate aluOuput(aluOut,controlSignals[3],data_bus);
+    // ff de banderas
+    FlipFlopD2b banderas({c,z},controlSignals[9],reset, clock, {c_flag,z_flag});
+    //---------------------------- PUERTOS DE SALIDA -------------------------------------------
+    FlipFlopD4b salida(data_bus, controlSignals[0],reset,clock, FF_out);
+    Triestate in(pushbuttons, controlSignals[2],data_bus);
+>>>>>>> parent of 524793e... Resolviendo el problema
 
 endmodule
