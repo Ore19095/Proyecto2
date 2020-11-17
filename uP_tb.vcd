@@ -1,5 +1,5 @@
 $date
-	Mon Nov 16 17:32:20 2020
+	Mon Nov 16 18:01:42 2020
 $end
 $version
 	Icarus Verilog
@@ -8,529 +8,788 @@ $timescale
 	1ps
 $end
 $scope module testbench $end
-$var wire 12 ! out [11:0] $end
-$var reg 12 " carga [11:0] $end
-$var reg 1 # clk $end
-$var reg 1 $ enable $end
-$var reg 1 % load $end
-$var reg 1 & res $end
-$scope module cont $end
-$var wire 1 # clk $end
-$var wire 1 $ enable $end
-$var wire 1 % load $end
-$var wire 1 & reset $end
-$var wire 12 ' valueLoad [11:0] $end
-$var reg 12 ( out [11:0] $end
+$var wire 4 ! FF_out [3:0] $end
+$var wire 4 " accu [3:0] $end
+$var wire 1 # c_flag $end
+$var wire 4 $ data_bus [3:0] $end
+$var wire 4 % oprnd [3:0] $end
+$var wire 1 & z_flag $end
+$var wire 8 ' program_byte [7:0] $end
+$var wire 1 ( phase $end
+$var wire 4 ) instr [3:0] $end
+$var wire 12 * address_RAM [11:0] $end
+$var wire 12 + PC [11:0] $end
+$var reg 1 , clock $end
+$var reg 4 - pushbuttons [3:0] $end
+$var reg 1 . reset $end
+$var integer 32 / nota [31:0] $end
+$scope module uPmodule $end
+$var wire 4 0 FF_out [3:0] $end
+$var wire 4 1 accu [3:0] $end
+$var wire 1 # c_flag $end
+$var wire 1 , clock $end
+$var wire 4 2 data_bus [3:0] $end
+$var wire 4 3 oprnd [3:0] $end
+$var wire 4 4 pushbuttons [3:0] $end
+$var wire 1 . reset $end
+$var wire 1 & z_flag $end
+$var wire 8 5 program_byte [7:0] $end
+$var wire 1 ( phase $end
+$var wire 1 6 opernd $end
+$var wire 4 7 instr [3:0] $end
+$var wire 7 8 inDecode [6:0] $end
+$var wire 13 9 controlSignals [12:0] $end
+$var wire 12 : address_RAM [11:0] $end
+$var wire 12 ; PC [11:0] $end
+$scope module control $end
+$var wire 1 , clk $end
+$var wire 1 < enableCounter $end
+$var wire 1 = enableFetch $end
+$var wire 1 > load $end
+$var wire 1 . reset $end
+$var wire 12 ? valueLoad [11:0] $end
+$var wire 12 @ valueCounter [11:0] $end
+$var wire 8 A programByte [7:0] $end
+$var wire 4 B operand [3:0] $end
+$var wire 4 C instr [3:0] $end
+$scope module fetch $end
+$var wire 1 , clk $end
+$var wire 1 = enabled $end
+$var wire 1 . reset $end
+$var wire 8 D D [7:0] $end
+$var reg 4 E instr [3:0] $end
+$var reg 4 F operand [3:0] $end
+$upscope $end
+$scope module programCounter $end
+$var wire 1 , clk $end
+$var wire 1 < enable $end
+$var wire 1 > load $end
+$var wire 1 . reset $end
+$var wire 12 G valueLoad [11:0] $end
+$var reg 12 H out [11:0] $end
+$upscope $end
+$scope module rom $end
+$var wire 12 I address [11:0] $end
+$var wire 8 J data [7:0] $end
+$upscope $end
+$upscope $end
+$scope module decode $end
+$var wire 7 K address [6:0] $end
+$var reg 13 L value [12:0] $end
+$upscope $end
+$scope module fase $end
+$var wire 1 , clk $end
+$var wire 1 M enable $end
+$var wire 1 . reset $end
+$var wire 1 ( q $end
+$scope module FF $end
+$var wire 1 , clk $end
+$var wire 1 N d $end
+$var wire 1 M enable $end
+$var wire 1 . reset $end
+$var reg 1 ( q $end
+$upscope $end
+$upscope $end
 $upscope $end
 $upscope $end
 $enddefinitions $end
 #0
 $dumpvars
-bx (
-b0 '
-0&
-0%
-0$
-0#
-b0 "
-bx !
+xN
+1M
+bx L
+bxzzx K
+bx J
+bx I
+bx H
+b0xxxxxxxxx G
+bx F
+bx E
+bx D
+bx C
+bx B
+bx A
+bx @
+b0xxxxxxxxx ?
+x>
+x=
+x<
+bx ;
+b0xxxxxxxxx :
+bx 9
+bxzzx 8
+bx 7
+x6
+bx 5
+b110 4
+bz 3
+bz 2
+bz 1
+bz 0
+b0 /
+0.
+b110 -
+0,
+bx +
+b0xxxxxxxxx *
+bx )
+x(
+bx '
+z&
+bz %
+bz $
+z#
+bz "
+bz !
 $end
-#1
-1#
-b0 !
-b0 (
-1&
 #2
-0#
-0&
+1<
+0>
+b0xxxxxxxx *
+b0xxxxxxxx :
+b0xxxxxxxx ?
+b0xxxxxxxx G
+06
+b1000000001000 9
+b1000000001000 L
+b0 B
+b0 F
+b0 )
+b0 7
+b0 C
+b0 E
+b0 +
+b0 ;
+b0 @
+b0 H
+b0 I
+1N
+1=
+b0zz0 8
+b0zz0 K
+0(
+1.
 #3
-1#
-#4
-0#
-1$
+0.
 #5
-b1 !
-b1 (
-1#
-#6
-0#
-#7
-b10 !
-b10 (
-1#
-#8
-0#
-#9
-b11 !
-b11 (
-1#
+0<
+0>
+b0xxxxxxxxx *
+b0xxxxxxxxx :
+b0xxxxxxxxx ?
+b0xxxxxxxxx G
+x6
+b0 9
+b0 L
+bx B
+bx F
+bx )
+bx 7
+bx C
+bx E
+b0xxxxxxxxx +
+b0xxxxxxxxx ;
+b0xxxxxxxxx @
+b0xxxxxxxxx H
+b0xxxxxxxxx I
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
 #10
-0#
-#11
-b100 !
-b100 (
-1#
-#12
-0#
-#13
-b101 !
-b101 (
-1#
-#14
-0#
+0,
 #15
-b110 !
-b110 (
-1#
-#16
-0#
-#17
-b111 !
-b111 (
-1#
-#18
-0#
-#19
-b1000 !
-b1000 (
-1#
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
 #20
-0#
-#21
-b1001 !
-b1001 (
-1#
-#22
-0#
-#23
-b1010 !
-b1010 (
-1#
-#24
-0#
+0,
 #25
-b1011 !
-b1011 (
-1#
-#26
-0#
-#27
-b1100 !
-b1100 (
-1#
-#28
-0#
-#29
-b1101 !
-b1101 (
-1#
+0<
+b0 9
+b0 L
+bx +
+bx ;
+bx @
+bx H
+bx I
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
 #30
-0#
-#31
-b1110 !
-b1110 (
-1#
-#32
-0#
-#33
-b1111 !
-b1111 (
-1#
-#34
-0#
+0,
 #35
-b10000 !
-b10000 (
-1#
-#36
-0#
-#37
-b10001 !
-b10001 (
-1#
-#38
-0#
-#39
-b10010 !
-b10010 (
-1#
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
 #40
-0#
-#41
-b10011 !
-b10011 (
-1#
-#42
-0#
-#43
-b10100 !
-b10100 (
-1#
-#44
-0#
+0,
 #45
-b10101 !
-b10101 (
-1#
-#46
-0#
-#47
-b10110 !
-b10110 (
-1#
-#48
-0#
-#49
-b10111 !
-b10111 (
-1#
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
 #50
-0#
-#51
-b11000 !
-b11000 (
-1#
-#52
-0#
-#53
-b11001 !
-b11001 (
-1#
-#54
-0#
-b0 !
-b0 (
-1&
+0,
 #55
-1#
-#56
-0#
-0&
-#57
-b1 !
-b1 (
-1#
-#58
-0#
-#59
-b10 !
-b10 (
-1#
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
 #60
-0#
-#61
-b11 !
-b11 (
-1#
-#62
-0#
-#63
-b100 !
-b100 (
-1#
-#64
-0#
+0,
 #65
-b101 !
-b101 (
-1#
-#66
-0#
-b11111111 "
-b11111111 '
-#67
-b110 !
-b110 (
-1#
-#68
-0#
-#69
-b111 !
-b111 (
-1#
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
 #70
-0#
-b11111111 !
-b11111111 (
-1%
-#71
-1#
-#72
-0#
-#73
-1#
-#74
-0#
+0,
 #75
-1#
-#76
-0#
-#77
-1#
-#78
-0#
-#79
-1#
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
 #80
-0#
-0%
-#81
-b100000000 !
-b100000000 (
-1#
-#82
-0#
-#83
-b100000001 !
-b100000001 (
-1#
-#84
-0#
+0,
 #85
-b100000010 !
-b100000010 (
-1#
-#86
-0#
-#87
-b100000011 !
-b100000011 (
-1#
-#88
-0#
-#89
-b100000100 !
-b100000100 (
-1#
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
 #90
-0#
-0$
-#91
-1#
-#92
-0#
-#93
-1#
-#94
-0#
+0,
 #95
-1#
-#96
-0#
-#97
-1#
-#98
-0#
-#99
-1#
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
 #100
-0#
-1$
-#101
-b100000101 !
-b100000101 (
-1#
-#102
-0#
-#103
-b100000110 !
-b100000110 (
-1#
-#104
-0#
+0,
 #105
-b100000111 !
-b100000111 (
-1#
-#106
-0#
-#107
-b100001000 !
-b100001000 (
-1#
-#108
-0#
-#109
-b100001001 !
-b100001001 (
-1#
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
 #110
-0#
-b0 !
-b0 (
-1&
-#111
-1#
-#112
-0#
-0&
-#113
-b1 !
-b1 (
-1#
-#114
-0#
+0,
 #115
-b10 !
-b10 (
-1#
-#116
-0#
-#117
-b11 !
-b11 (
-1#
-#118
-0#
-#119
-b100 !
-b100 (
-1#
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
 #120
-0#
-#121
-b101 !
-b101 (
-1#
-#122
-0#
-b111111111010 "
-b111111111010 '
-#123
-1#
-b111111111010 !
-b111111111010 (
-1%
-#124
-0#
+0,
 #125
-1#
-#126
-0#
-#127
-b111111111011 !
-b111111111011 (
-1#
-0%
-#128
-0#
-#129
-b111111111100 !
-b111111111100 (
-1#
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
 #130
-0#
-#131
-1#
-0$
-#132
-0#
-#133
-b111111111101 !
-b111111111101 (
-1#
-1$
-#134
-0#
+0,
 #135
-b111111111110 !
-b111111111110 (
-1#
-#136
-0#
-#137
-b111111111111 !
-b111111111111 (
-1#
-#138
-0#
-#139
-b0 !
-b0 (
-1#
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
 #140
-0#
-#141
-b1 !
-b1 (
-1#
-#142
-0#
-#143
-b10 !
-b10 (
-1#
-#144
-0#
+0,
 #145
-b11 !
-b11 (
-1#
-#146
-0#
-#147
-b100 !
-b100 (
-1#
-#148
-0#
-#149
-b101 !
-b101 (
-1#
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
 #150
-0#
-#151
-b110 !
-b110 (
-1#
-#152
-0#
-#153
-b111 !
-b111 (
-1#
-#154
-0#
+0,
 #155
-b1000 !
-b1000 (
-1#
-#156
-0#
-#157
-b1001 !
-b1001 (
-1#
-#158
-0#
-#159
-b1010 !
-b1010 (
-1#
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
 #160
-0#
-#161
-b1011 !
-b1011 (
-1#
-#162
-0#
-#163
-b1100 !
-b1100 (
-1#
-#164
-0#
+0,
 #165
-b1101 !
-b1101 (
-1#
-#166
-0#
-#167
-b1110 !
-b1110 (
-1#
-#168
-0#
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#170
+0,
+#175
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#180
+0,
+#185
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#190
+0,
+#195
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#200
+0,
+#205
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#210
+0,
+#215
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#220
+0,
+#225
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#230
+0,
+#235
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#240
+0,
+#245
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#250
+0,
+#255
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#260
+0,
+#265
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#270
+0,
+#275
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#280
+0,
+#285
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#290
+0,
+#295
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#300
+0,
+#305
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#310
+0,
+#315
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#320
+0,
+#325
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#330
+0,
+#335
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#340
+0,
+#345
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#350
+0,
+#355
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#360
+0,
+#365
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#370
+0,
+#375
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#380
+0,
+#385
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#390
+0,
+#395
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#400
+0,
+#405
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#410
+0,
+#415
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#420
+0,
+#425
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#430
+0,
+#435
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#440
+0,
+#445
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#450
+0,
+#455
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#460
+0,
+#465
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#470
+0,
+#475
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#480
+0,
+#485
+0<
+b0 9
+b0 L
+0N
+0=
+bxzz1 8
+bxzz1 K
+1(
+1,
+#490
+0,
+#495
+1<
+b1000000001000 9
+b1000000001000 L
+1N
+1=
+bxzz0 8
+bxzz0 K
+0(
+1,
+#500
+0,
