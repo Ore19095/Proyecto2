@@ -1,0 +1,968 @@
+$date
+	Tue Nov 17 00:07:12 2020
+$end
+$version
+	Icarus Verilog
+$end
+$timescale
+	1ps
+$end
+$scope module testbench $end
+$var wire 4 ! FF_out [3:0] $end
+$var wire 4 " accu [3:0] $end
+$var wire 1 # c_flag $end
+$var wire 4 $ data_bus [3:0] $end
+$var wire 1 % z_flag $end
+$var wire 8 & program_byte [7:0] $end
+$var wire 1 ' phase $end
+$var wire 4 ( oprnd [3:0] $end
+$var wire 4 ) instr [3:0] $end
+$var wire 12 * address_RAM [11:0] $end
+$var wire 12 + PC [11:0] $end
+$var reg 1 , clock $end
+$var reg 4 - pushbuttons [3:0] $end
+$var reg 1 . reset $end
+$var integer 32 / nota [31:0] $end
+$scope module uPmodule $end
+$var wire 4 0 FF_out [3:0] $end
+$var wire 4 1 accu [3:0] $end
+$var wire 1 # c_flag $end
+$var wire 1 , clock $end
+$var wire 4 2 data_bus [3:0] $end
+$var wire 4 3 pushbuttons [3:0] $end
+$var wire 1 . reset $end
+$var wire 1 % z_flag $end
+$var wire 1 4 we $end
+$var wire 8 5 program_byte [7:0] $end
+$var wire 1 ' phase $end
+$var wire 13 6 outDecode [12:0] $end
+$var wire 4 7 oprnd [3:0] $end
+$var wire 3 8 opALU [2:0] $end
+$var wire 1 9 oeOprnd $end
+$var wire 1 : oeIn $end
+$var wire 1 ; loadPC $end
+$var wire 1 < loadOut $end
+$var wire 1 = loadFlags $end
+$var wire 1 > loadA $end
+$var wire 4 ? instr [3:0] $end
+$var wire 1 @ incPC $end
+$var wire 7 A inDecode [6:0] $end
+$var wire 1 B eoALU $end
+$var wire 1 C cs $end
+$var wire 12 D address_RAM [11:0] $end
+$var wire 12 E PC [11:0] $end
+$scope module dec $end
+$var wire 7 F address [6:0] $end
+$var reg 13 G value [12:0] $end
+$upscope $end
+$scope module fase $end
+$var wire 1 , clk $end
+$var wire 1 H enable $end
+$var wire 1 . reset $end
+$var wire 1 ' q $end
+$scope module FF $end
+$var wire 1 , clk $end
+$var wire 1 I d $end
+$var wire 1 H enable $end
+$var wire 1 . reset $end
+$var reg 1 ' q $end
+$upscope $end
+$upscope $end
+$scope module fetchIns $end
+$var wire 1 , clk $end
+$var wire 4 J d [3:0] $end
+$var wire 1 K enable $end
+$var wire 1 . reset $end
+$var reg 4 L q [3:0] $end
+$upscope $end
+$scope module fetchOp $end
+$var wire 1 , clk $end
+$var wire 4 M d [3:0] $end
+$var wire 1 N enable $end
+$var wire 1 . reset $end
+$var reg 4 O q [3:0] $end
+$upscope $end
+$scope module programCouter $end
+$var wire 1 , clk $end
+$var wire 1 @ enable $end
+$var wire 1 ; load $end
+$var wire 1 . reset $end
+$var wire 12 P valueLoad [11:0] $end
+$var reg 12 Q out [11:0] $end
+$upscope $end
+$scope module programROM $end
+$var wire 12 R address [11:0] $end
+$var wire 8 S data [7:0] $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+bx S
+bx R
+bx Q
+bx P
+bx O
+xN
+bx M
+bx L
+xK
+bx J
+xI
+1H
+b0 G
+bx00x F
+bx E
+bx D
+0C
+0B
+bx00x A
+0@
+bx ?
+0>
+0=
+0<
+0;
+0:
+09
+b0 8
+bx 7
+b0 6
+bx 5
+04
+b110 3
+bz 2
+bz 1
+bz 0
+b0 /
+0.
+b110 -
+0,
+bx +
+bx *
+bx )
+bx (
+x'
+bx &
+0%
+bz $
+0#
+bz "
+bz !
+$end
+#2
+b100 J
+b1111 M
+b1001111 &
+b1001111 5
+b1001111 S
+b0 +
+b0 E
+b0 Q
+b0 R
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+b1001111 *
+b1001111 D
+b1001111 P
+b0 (
+b0 7
+b0 O
+b0 )
+b0 ?
+b0 L
+b0 A
+b0 F
+0'
+1.
+#3
+0.
+#5
+b11 M
+b1000011 &
+b1000011 5
+b1000011 S
+b1 +
+b1 E
+b1 Q
+b1 R
+19
+0B
+b10 8
+1=
+1>
+0@
+0I
+0K
+0N
+b11010000010 6
+b11010000010 G
+1'
+b100001 A
+b100001 F
+b100 )
+b100 ?
+b100 L
+b111101000011 *
+b111101000011 D
+b111101000011 P
+b1111 (
+b1111 7
+b1111 O
+1,
+#10
+0,
+#15
+09
+1B
+b0 8
+0=
+0>
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+b100000 A
+b100000 F
+0'
+1,
+#20
+0,
+#25
+b1100 J
+b1 M
+b11000001 &
+b11000001 5
+b11000001 S
+b10 +
+b10 E
+b10 Q
+b10 R
+19
+0B
+b10 8
+1=
+1>
+0@
+0I
+b11010000010 6
+b11010000010 G
+0K
+0N
+b100001 A
+b100001 F
+1'
+b1111000001 *
+b1111000001 D
+b1111000001 P
+b11 (
+b11 7
+b11 O
+1,
+#30
+0,
+#35
+09
+1B
+b0 8
+0=
+0>
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+b100000 A
+b100000 F
+0'
+1,
+#40
+0,
+#45
+bx J
+bx M
+bx &
+bx 5
+bx S
+b111000001 +
+b111000001 E
+b111000001 Q
+b111000001 R
+1;
+0@
+0I
+0K
+0N
+b100000001000 6
+b100000001000 G
+1'
+b1100001 A
+b1100001 F
+b1100 )
+b1100 ?
+b1100 L
+b1xxxxxxxx *
+b1xxxxxxxx D
+b1xxxxxxxx P
+b1 (
+b1 7
+b1 O
+1,
+#50
+0,
+#55
+b1xxxxxxxx +
+b1xxxxxxxx E
+b1xxxxxxxx Q
+b1xxxxxxxx R
+0;
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+b1100000 A
+b1100000 F
+0'
+1,
+#60
+0,
+#65
+bx +
+bx E
+bx Q
+bx R
+0B
+0@
+0I
+0K
+0N
+b0 6
+b0 G
+1'
+bx001 A
+bx001 F
+bx )
+bx ?
+bx L
+bx *
+bx D
+bx P
+bx (
+bx 7
+bx O
+1,
+#70
+0,
+#75
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#80
+0,
+#85
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#90
+0,
+#95
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#100
+0,
+#105
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#110
+0,
+#115
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#120
+0,
+#125
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#130
+0,
+#135
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#140
+0,
+#145
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#150
+0,
+#155
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#160
+0,
+#165
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#170
+0,
+#175
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#180
+0,
+#185
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#190
+0,
+#195
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#200
+0,
+#205
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#210
+0,
+#215
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#220
+0,
+#225
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#230
+0,
+#235
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#240
+0,
+#245
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#250
+0,
+#255
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#260
+0,
+#265
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#270
+0,
+#275
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#280
+0,
+#285
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#290
+0,
+#295
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#300
+0,
+#305
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#310
+0,
+#315
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#320
+0,
+#325
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#330
+0,
+#335
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#340
+0,
+#345
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#350
+0,
+#355
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#360
+0,
+#365
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#370
+0,
+#375
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#380
+0,
+#385
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#390
+0,
+#395
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#400
+0,
+#405
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#410
+0,
+#415
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#420
+0,
+#425
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#430
+0,
+#435
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#440
+0,
+#445
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#450
+0,
+#455
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#460
+0,
+#465
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#470
+0,
+#475
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#480
+0,
+#485
+0B
+0@
+0I
+b0 6
+b0 G
+0K
+0N
+bx001 A
+bx001 F
+1'
+1,
+#490
+0,
+#495
+1B
+1@
+1I
+b1000000001000 6
+b1000000001000 G
+1K
+1N
+bx000 A
+bx000 F
+0'
+1,
+#500
+0,
