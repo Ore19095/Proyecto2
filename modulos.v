@@ -3,32 +3,13 @@
 
 module Contador12b(input wire  load,enable,clk,reset, input wire [11:0]valueLoad, output reg [11:0] out );
 
-    always @ (posedge clk, posedge reset, posedge load) begin
+    always @ (posedge clk, posedge reset) begin
         if (load) out <= valueLoad;// de lo contrario se revisa reset si es un entonces la salida es 0
-        else 
-            if (reset) out <= 0;//de lo contrario se revisa enable y si es 1 la salida se le aumenta 1
-            else if(enable) out <= out + 1;// si es 1 entonces se asigna el valor cargado a la salida
+        else if (reset) out <= 0;//de lo contrario se revisa enable y si es 1 la salida se le aumenta 1
+        else if(enable) out <= out + 1;// si es 1 entonces se asigna el valor cargado a la salida
             else out <= out;
     end
 endmodule
-    
-
-module counter_12b(input clk, reset, load, eneable, input [11:0] b,
-                    output reg [11:0] c);
-always @ (posedge clk, posedge load, posedge reset)begin
-     if (reset)
-      c <= 12'b0;
-    else if (load)
-      c <= b;
-    if (eneable)
-    begin
-      if (c == 12'hFFF)
-      c <= 12'b0;
-    else
-      c <= c + 12'h001;
-      end
-end
-endmodule //counter
 
 //------------ AQUI VAN LOS FLIP FLOPS ----------------------------------------------------------
 module  FlipFlopD1b(input d,enable,reset,clk,output reg q);
@@ -72,7 +53,7 @@ module Memory(input wire [11:0] address, output wire [7:0] data );
     reg[7:0] memoria[4095:0];
 
     initial begin
-        $readmemh("memory.list",memoria); // se lee la memoria
+        $readmemh("testbench.list",memoria); // se lee la memoria
     end
 
     assign  data = memoria[address];
@@ -138,4 +119,23 @@ module Triestate(input [3:0] in, input enable, output wire [3:0] y );
     assign y[2] = (enable? in[2] : 1'bz );
     assign y[3] = (enable? in[3] : 1'bz );
 
+endmodule
+
+module ALU(input wire[3:0] A,B,input [2:0] control , output wire [3:0] out, output wire C, Z );
+    reg[4:0] resultado; //registro en el cual se almacena el resultado
+    assign Z = ~(resultado[0] | resultado[1] | resultado[2] | resultado[3]); 
+    // siempre qque todos los bits de out sean 0 Z va a ser 1 en caso contrario sera 0
+    assign out = resultado[3:0]; //la salida son los 4 bits menos significativos de resultado
+    assign C = resultado[4] ;//C es el ultimo bit (el de acarreo) de la operacion
+
+    always @ (A,B,control) begin  // siempre qeu cambie A, B o Control se ejecuta
+        case(control)
+            3'b000: resultado <= A; //deja pasar A
+            3'b001: resultado <= A - B;  //resta a y B 
+            3'b010: resultado <= B; // deja pasar B
+            3'b011: resultado <= A + B; //suma a y b
+            3'b100: resultado <= {1'b0, ~(A  & B)} ; // NAND A y B
+            default: resultado <= 0; //si se ingresara cualquier otra combinacion
+        endcase
+    end
 endmodule

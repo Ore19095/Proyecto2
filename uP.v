@@ -10,16 +10,14 @@ module uP(input  clock, reset, input [3:0] pushbuttons, output [11:0] PC, addres
     wire [2:0] opALU;
     wire cs;
     wire we;
-    wire eoALU;
+    wire oeALU;
     wire oeIn;
     wire oeOprnd;
     wire loadOut;
     wire [12:0] outDecode;
     wire [6:0] inDecode;
 
-    //provisional
-    assign c_flag = 0;
-    assign z_flag = 0;
+
     assign inDecode = {instr, c_flag,z_flag,phase}; 
     Decode dec(inDecode, outDecode);
     //se asignaa cada cable el valor de la salida del decode
@@ -30,7 +28,7 @@ module uP(input  clock, reset, input [3:0] pushbuttons, output [11:0] PC, addres
     assign opALU = outDecode[8:6];
     assign cs = outDecode[5];
     assign we = outDecode[4];
-    assign eoALU = outDecode[3];
+    assign oeALU = outDecode[3];
     assign oeIn = outDecode [2];
     assign oeOprnd = outDecode [1];
     assign loadOut = outDecode[0];
@@ -38,12 +36,27 @@ module uP(input  clock, reset, input [3:0] pushbuttons, output [11:0] PC, addres
     assign address_RAM = {oprnd,program_byte};
     //------------------ CONTROL DEL PROGRAMA -------------------------------
     Contador12b programCouter(loadPC,incPC, clock, reset, address_RAM, PC ); //program counter
-    //counter_12b cont(clock,reset, loadPC,incPC,address_RAM, PC);
     Memory  programROM(PC, program_byte); // memoria de programa
     FlipFlopD4b fetchOp(program_byte[3:0], ~phase, reset, clock, oprnd);
     FlipFlopD4b  fetchIns(program_byte[7:4], ~phase, reset, clock, instr);
     FlipFlopT   fase(1'b1, reset, clock, phase);
+    //-----------------------------------------------------------------------
+    //------------------- MANEJO DE DATOS------------------------------------
+    wire[3:0] outAlu;
+    wire c,z;
+    Triestate bufferOprnd(oprnd,oeOprnd,data_bus);
+    Triestate bufferIn(pushbuttons,oeIn,data_bus);
+    Triestate bufferAlu(outAlu,oeALU, data_bus);
 
+    RAM ram(address_RAM,cs,we,data_bus);
+    //------------------- ALU ----------------------------------------------
+    FlipFlopD4b accumulador(outAlu, loadA,reset, clock, accu );
+    ALU unidadAritmetica(accu,data_bus, opALU, outAlu,c , z);
+
+    FlipFlopD1b flagsC(c,loadFlags,reset, clock, c_flag);
+    FlipFlopD1b flagsZ(z,loadFlags,reset, clock, z_flag);
+    //--------------- Salida -----------------------------------------------
+    FlipFlopD4b salida(data_bus,loadOut, reset, clock, FF_out );
     
     
 

@@ -1,0 +1,29 @@
+44  //LIT 4
+70  //ST 000
+00
+49  //LIT 9
+B0  //ADDM 000
+00
+D1  //OUT 1
+53  //IN 34
+A5  //ADDI 5
+D1  //OUT 12
+70  //ST  001
+01
+40  //LIT 0
+EF  //NANDI F
+70  //ST 000
+00
+4F  //LIT F
+F0  //NANDM 000 
+00
+D0  //OUT 0
+44  //LIT 4
+C0  //JMP 011
+11
+A5  //ADDI 5
+AD  //ADDI D
+10  //JNC 011
+11
+00  //JC   017
+17
