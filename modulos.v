@@ -53,7 +53,7 @@ module Memory(input wire [11:0] address, output wire [7:0] data );
     reg[7:0] memoria[4095:0];
 
     initial begin
-        $readmemh("testbench.list",memoria); // se lee la memoria
+        $readmemh("memory.list",memoria); // se lee la memoria
     end
 
     assign  data = memoria[address];
